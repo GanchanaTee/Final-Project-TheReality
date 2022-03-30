@@ -1,0 +1,16 @@
+.acitivity-right-timer-time{
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.acitivity-right-timer-time span {
+    font-size: 30px;
+    z-index: -120;
+}
+.acitivity-right-timer-time div {
+    display: flex;
+    justify-content: center;
+}
+.acitivity-right-timer-time div div {
+    width: 90px;
+}
