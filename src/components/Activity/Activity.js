@@ -1,5 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import runningImage from '../../assets/images/running-color.png'
+
+import running from '../../assets/images/running.png'
+import swimming from '../../assets/images/swiming.png'
+import walking from '../../assets/images/walk.png'
+import weight from '../../assets/images/weight.png'
+import biking from '../../assets/images/bike.png'
+import batminton from '../../assets/images/batminton.png'
+
+
 import preButton from '../../assets/images/arrow-left-color.png'
 import nextButton from '../../assets/images/arrow-right-color.png'
 
@@ -9,7 +17,17 @@ import Form from './Form/Form'
 
 function Activity() {
 
-    const [seconds, setSeconds] = useState(898);
+    const ACITIVITIES_TYPE = [
+      {label: 'Running', actSrc: running },
+      {label: 'Swimming', actSrc: swimming },
+      {label: 'Walking', actSrc: walking },
+      {label: 'Weight', actSrc: weight },
+      {label: 'Biking', actSrc: biking },
+      {label: 'Batminton', actSrc: batminton },
+    ]
+
+    const [slideAct, setSlideAct] =useState (0);
+    const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const [form, setForm] = useState({
       actTypes: '',
@@ -25,6 +43,24 @@ function Activity() {
         ...form,
         [e.target.name]: e.target.value,
       })
+    }
+
+    const next = () => {
+      if (slideAct === (ACITIVITIES_TYPE.length-1)) {
+        return
+      } else {
+        const nextSide = slideAct + 1
+        setSlideAct(nextSide)
+      }
+    }
+
+    const previous = () => {
+      if (slideAct === 0) {
+        return
+      } else {
+        const nextSide = slideAct - 1
+        setSlideAct(nextSide)
+      }
     }
 
   useEffect(() => {
@@ -56,7 +92,7 @@ function Activity() {
       ...form,
       hr: hrTimer,
       mn: mnTimer,
-      actTypes: 'Running',
+      actTypes: ACITIVITIES_TYPE[slideAct].label,
       date: newDate
     });
     setSeconds(0)
@@ -71,9 +107,9 @@ function Activity() {
                 <div className='acitivity-right-logo'>
                     <span>Activity Type</span>
                     <div>
-                        <img src={preButton} alt='no internet' className='logo-button'/>
-                        <img src={runningImage} alt='no internet' className='logo-img'/>
-                        <img src={nextButton} alt='no internet'className='logo-button'/>
+                        <img src={preButton} alt='no internet' className='logo-button' onClick={previous}/>
+                        <img src={ACITIVITIES_TYPE[slideAct].actSrc} alt='no internet' className='logo-img'/>
+                        <img src={nextButton} alt='no internet'className='logo-button' onClick={next}/>
                     </div>
                 </div>
                 <div className='acitivity-right-finish'>
