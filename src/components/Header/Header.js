@@ -34,7 +34,7 @@ function Header() {
                 </button>   
             </div>
         </div>
-        <div className={showHeaderOptions ? 'header-options show-hamburger-options' : 'header-options'}>
+        <div className={showHeaderOptions ? 'header-options show-hamburger-options' : 'header-options'} tolink='/login'>
             {getHeaderOptions()}
         </div>
     </div>

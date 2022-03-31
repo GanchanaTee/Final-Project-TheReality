@@ -1,0 +1,46 @@
+.record-container{
+    color: white;
+}
+
+.data-result {
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px);
+    display: flex;
+    color: rgb(255, 255, 255);
+    margin: 7px;
+    padding: 10px 8px;
+    font-size: 18px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.data-activity {
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px);
+    display: flex;
+    color: rgb(255, 255, 255);
+    margin-bottom: 7px;
+    padding: 10px 8px;
+    font-size: 18px;
+    width: 100%;
+    justify-content: center;
+}
+
+.data-activity-user {
+    border: 4px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.top-plus {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}

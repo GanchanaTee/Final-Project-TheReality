@@ -1,11 +1,13 @@
 .acitivity-right-timer-time{
+    color: white;
     font-size: 60px;
     margin-bottom: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .acitivity-right-timer-time span {
     font-size: 30px;
-    z-index: -120;
 }
 .acitivity-right-timer-time div {
     display: flex;

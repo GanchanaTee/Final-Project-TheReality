@@ -7,9 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
-    width: 80%;
-    padding-top: 20px;
+    width: 100%;
 }
 .activity-right {
     width: 50%;
@@ -27,10 +25,10 @@
 }
 .acitivity-right-logo span {
     font-size: 20px;
-    z-index: -200;
+    color: white;
+    margin-bottom: 20px ;
 }
 .acitivity-right-logo div {
-    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,12 +61,11 @@
 
 .activity-left {
     width: 50%;
-    height: 400px;
-    margin: 30px;
+    margin: 0px 30px;
     padding: 30px;
     border-radius: 70px;
-    background-color: rgb(255, 232, 236);
-    z-index: 0;
+    /* background-color: white; */
+    color: white;
 }
 
 .activity-left-content {
