@@ -47,7 +47,7 @@ function Activity() {
 
     const next = () => {
       if (slideAct === (ACITIVITIES_TYPE.length-1)) {
-        return
+        setSlideAct(0)
       } else {
         const nextSide = slideAct + 1
         setSlideAct(nextSide)
@@ -56,7 +56,7 @@ function Activity() {
 
     const previous = () => {
       if (slideAct === 0) {
-        return
+        setSlideAct(ACITIVITIES_TYPE.length-1)
       } else {
         const nextSide = slideAct - 1
         setSlideAct(nextSide)
@@ -98,6 +98,8 @@ function Activity() {
     setSeconds(0)
     setIsActive(false)
   }
+
+  
 
   return (
     <div className='acitivity-container'>

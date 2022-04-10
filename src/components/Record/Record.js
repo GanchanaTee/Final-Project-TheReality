@@ -20,30 +20,30 @@ function Record() {
         <div className='data-activity'>
         <div className='data-activity-user'>
           DATE
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           ACTIVITY
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           TIMES
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           CALORIES
-        </div>&nbsp;&nbsp;
+        </div>
       </div>
       <div className='data-activity'>
         <div className='data-activity-user'>
           13 / 06 /2022
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           RUN
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           30 min
-        </div>&nbsp;|&nbsp;
+        </div>
         <div className='data-activity-user'>
           324
-        </div>&nbsp;&nbsp;
+        </div>
       </div>
     </div>
   )

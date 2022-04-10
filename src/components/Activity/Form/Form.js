@@ -1,7 +1,24 @@
 import React from 'react'
+import axios from 'axios';
 import './Form.css'
 
 function Form(props) {
+
+    const records = () => {
+        axios({
+          method: "POST",
+          data: {
+            activityName: props.form.actTypes,
+            timestamp: props.form.date,
+            duration: props.form.mn,
+            calories: props.form.cal,
+            description: props.form.des,
+          },
+          withCredentials: true,
+          url: "http://localhost:4000/users/me/records",
+        }).then((res) => console.log(res));
+      };
+
   return (
     <>
         <div className='form-actType'>
@@ -28,7 +45,7 @@ function Form(props) {
             <label >Description: </label> <br/>
             <textarea name="des" cols="40" rows="3" value={props.form.des} onChange={props.handleChange}></textarea>
         </div>
-        <button type="submit" className="button">Add</button>
+        <button onClick={records}>Add</button>
     </>
   )
 }
