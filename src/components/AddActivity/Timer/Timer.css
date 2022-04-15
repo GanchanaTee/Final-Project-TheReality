@@ -1,18 +1,18 @@
 .acitivity-right-timer-time{
     color: white;
-    font-size: 60px;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 .acitivity-right-timer-time span {
-    font-size: 30px;
+    font-size: 2rem;
 }
 .acitivity-right-timer-time div {
     display: flex;
     justify-content: center;
 }
 .acitivity-right-timer-time div div {
-    width: 90px;
+    width: 4rem;
 }

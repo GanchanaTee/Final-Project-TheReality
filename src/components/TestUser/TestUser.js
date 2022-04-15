@@ -9,16 +9,16 @@ function TestUser() {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/user",
+      url: "http://localhost:4000/users/me",
     }).then((res) => {
       setData(res.data);
-      console.log(res.data);
+      console.log(res);
     });
   };
 
   const logOut = () => {
     axios({
-      method: "GET",
+      method: "DELETE",
       withCredentials: true,
       url: "http://localhost:4000/users/logout",
     });

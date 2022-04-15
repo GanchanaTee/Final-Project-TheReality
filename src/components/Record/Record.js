@@ -1,20 +1,43 @@
-import React from 'react'
-
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import './Record.css'
 
-function Record() {
+import ListRecord from '../ListRecords/ListRecords'
+
+function Record(props) {
+
+  const [formRecords,setFormRecords] = useState([]);
+  const setLogged =  props.setIsLogin;
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/users/me/records",
+    }).then((res) => {
+      setFormRecords(res.data);
+      setLogged(true)
+      // console.log(res.data);
+    });
+  },[setLogged, formRecords]);
+  // Warning unmount formRecords
+
+  const currentMin = formRecords.reduce( (totalMin, record) => {
+    return totalMin + record.duration
+  },0);
+
   return (
     <div className='record-container'>
         <div className='top-plus'>
           <div className='data-result'>
             GOAL
             <br/>
-            5000 min
+            {props.data && props.data.durationGoal} min
           </div>
           <div className='data-result'>
             CURRENT TOTAL
             <br/>
-            50 min
+            {currentMin} min
           </div>
         </div>
         <div className='data-activity'>
@@ -30,21 +53,22 @@ function Record() {
         <div className='data-activity-user'>
           CALORIES
         </div>
-      </div>
-      <div className='data-activity'>
         <div className='data-activity-user'>
-          13 / 06 /2022
-        </div>
-        <div className='data-activity-user'>
-          RUN
-        </div>
-        <div className='data-activity-user'>
-          30 min
-        </div>
-        <div className='data-activity-user'>
-          324
+          
         </div>
       </div>
+      {formRecords.map((formRecord) => 
+             <ListRecord 
+               key={formRecord._id}
+               id={formRecord._id} 
+               actName={formRecord.activityName}
+               date={formRecord.timestamp}
+               duration={formRecord.duration}
+               calories={formRecord.calories}
+               description={formRecord.description}
+              //  setModalEditOpen={setModalEditOpen}
+                />  
+          )}
     </div>
   )
 }

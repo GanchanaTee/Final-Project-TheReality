@@ -4,7 +4,8 @@ import './Form.css'
 
 function Form(props) {
 
-    const records = () => {
+    const records = (event) => {
+        event.preventDefault();
         axios({
           method: "POST",
           data: {
@@ -16,7 +17,18 @@ function Form(props) {
           },
           withCredentials: true,
           url: "http://localhost:4000/users/me/records",
-        }).then((res) => console.log(res));
+        }).then((res) => {
+          console.log(res);
+          props.setForm({
+            actTypes: '',
+            date: '',
+            hr: 0,
+            mn: 0,
+            cal: 0,
+            des: ""
+          });
+          props.setActivityForm(false);
+        });
       };
 
   return (

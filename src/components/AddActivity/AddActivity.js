@@ -11,11 +11,11 @@ import batminton from '../../assets/images/batminton.png'
 import preButton from '../../assets/images/arrow-left-color.png'
 import nextButton from '../../assets/images/arrow-right-color.png'
 
-import './Activity.css'
+import './AddActivity.css'
 import Timer from './Timer/Timer'
 import Form from './Form/Form'
 
-function Activity() {
+function AddActivity(props) {
 
     const ACITIVITIES_TYPE = [
       {label: 'Running', actSrc: running },
@@ -36,7 +36,7 @@ function Activity() {
       mn: 0,
       cal: 0,
       des: ""
-    })
+    });
 
     const handleChange = e => {
       setForm({
@@ -124,7 +124,7 @@ function Activity() {
                 <div className='activity-left-content'>
                     <h2>Your Activity</h2>
                     <form className='activity-form'>
-                        <Form form={form} setForm={setForm} handleChange={handleChange} />
+                        <Form form={form} setForm={setForm} handleChange={handleChange} setActivityForm={props.setActivityForm}/>
                     </form>
                 </div>
             </div>
@@ -133,4 +133,4 @@ function Activity() {
   )
 }
 
-export default Activity
+export default AddActivity

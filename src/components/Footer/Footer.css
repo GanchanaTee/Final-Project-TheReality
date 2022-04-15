@@ -1,0 +1,26 @@
+.footer-container-end {
+    text-align: center;
+    font-size: 15px;
+    color: var(--purple);
+    height: 5.8vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer span {
+    font-size: 15px;
+}
+.footer-icon-align{
+    margin-right: 0.5rem ;
+}
+.footer-icon:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
