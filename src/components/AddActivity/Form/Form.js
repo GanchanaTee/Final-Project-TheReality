@@ -4,6 +4,8 @@ import './Form.css'
 
 function Form(props) {
 
+    const sumDuration = parseInt(props.form.mn) + (parseInt(props.form.hr) * 60); 
+
     const records = (event) => {
         event.preventDefault();
         axios({
@@ -11,7 +13,7 @@ function Form(props) {
           data: {
             activityName: props.form.actTypes,
             timestamp: props.form.date,
-            duration: props.form.mn,
+            duration: sumDuration,
             calories: props.form.cal,
             description: props.form.des,
           },
@@ -55,7 +57,7 @@ function Form(props) {
         </div>
         <div>
             <label >Description: </label> <br/>
-            <textarea name="des" cols="40" rows="3" value={props.form.des} onChange={props.handleChange}></textarea>
+            <textarea name="des" cols="30" rows="3" value={props.form.des} onChange={props.handleChange}></textarea>
         </div>
         <button onClick={records}>Add</button>
     </>

@@ -29,7 +29,15 @@ function Profile(props) {
   };
 
   useEffect( () => {
-    getProfileAPI();
+    let isMounted = true;
+    axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/users/me",
+      }).then((res) => {
+        if(isMounted) setData(res.data);      
+      });
+      return () => { isMounted = false}
   },[data]);
 
   const handleProfileChange = e => {

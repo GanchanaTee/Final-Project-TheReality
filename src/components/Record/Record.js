@@ -2,25 +2,30 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './Record.css'
 
-import ListRecord from '../ListRecords/ListRecords'
+import ListRecord from './ListRecords/ListRecords'
+import Modal from './Modal/Modal' ;
 
 function Record(props) {
 
   const [formRecords,setFormRecords] = useState([]);
+  const [modalEditOpen, setModalEditOpen] = useState(false);
+  const [modelID, setModelID] = useState();
   const setLogged =  props.setIsLogin;
 
   useEffect(() => {
+    let isMounted = true;
     axios({
       method: "GET",
       withCredentials: true,
       url: "http://localhost:4000/users/me/records",
     }).then((res) => {
-      setFormRecords(res.data);
-      setLogged(true)
-      // console.log(res.data);
+      if (isMounted) {
+        setFormRecords(res.data);
+        setLogged(true)
+      };
     });
+    return () => { isMounted = false }
   },[setLogged, formRecords]);
-  // Warning unmount formRecords
 
   const currentMin = formRecords.reduce( (totalMin, record) => {
     return totalMin + record.duration
@@ -28,6 +33,8 @@ function Record(props) {
 
   return (
     <div className='record-container'>
+      {modalEditOpen ? <Modal setModalEditOpen={setModalEditOpen} modelID={modelID}/> :
+      (<>
         <div className='top-plus'>
           <div className='data-result'>
             GOAL
@@ -41,23 +48,22 @@ function Record(props) {
           </div>
         </div>
         <div className='data-activity'>
-        <div className='data-activity-user'>
-          DATE
+          <div className='data-activity-user'>
+            DATE
+          </div>
+          <div className='data-activity-user'>
+            ACTIVITY
+          </div>
+          <div className='data-activity-user'>
+            TIMES
+          </div>
+          <div className='data-activity-user'>
+            CALORIES
+          </div>
+          <div className='data-activity-user'>
+          </div>
         </div>
-        <div className='data-activity-user'>
-          ACTIVITY
-        </div>
-        <div className='data-activity-user'>
-          TIMES
-        </div>
-        <div className='data-activity-user'>
-          CALORIES
-        </div>
-        <div className='data-activity-user'>
-          
-        </div>
-      </div>
-      {formRecords.map((formRecord) => 
+        {formRecords.map((formRecord) => 
              <ListRecord 
                key={formRecord._id}
                id={formRecord._id} 
@@ -67,8 +73,12 @@ function Record(props) {
                calories={formRecord.calories}
                description={formRecord.description}
               //  setModalEditOpen={setModalEditOpen}
+              setModalEditOpen={setModalEditOpen}
+              modalEditOpen={modalEditOpen}
+              setModelID={setModelID}
                 />  
           )}
+      </>)}
     </div>
   )
 }

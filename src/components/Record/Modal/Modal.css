@@ -1,0 +1,9 @@
+.model-container {
+    height: 67vh;
+    z-index: 100;
+    background-color: black;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
