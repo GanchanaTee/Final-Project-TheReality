@@ -44,43 +44,46 @@ function ProfileData(props) {
 
         {/* data profile */}
         <div className='data-profile'>
-        { toggleEdit ?
-            <input type='text' placeholder='Enter Your Name' 
-            name="displayName" value={props.profileData.displayName} 
-            onChange={props.handleProfileChange}/>
-            :(props.data ? <p>Welcome Back {props.data.displayName}</p> : <></>)}
-          
           <div className='data-profile-user'>
-            AboutMe
+          { toggleEdit ?
+              <>Name : <input type='text' placeholder='Enter Your Name' 
+              name="displayName" value={props.profileData.displayName} 
+              onChange={props.handleProfileChange} className='profile-input'/> </>
+              :(props.data ? <span>Welcome Back, {props.data.displayName}</span> : <></>)}
+          </div>    
+          <div className='data-profile-user'>
+            AboutMe :
             <br/>
             {toggleEdit ?
                 <input type='text' placeholder='Entre your about me' 
                 name="aboutMe" value={props.profileData.aboutMe} 
-                onChange={props.handleProfileChange}/>
+                onChange={props.handleProfileChange} className='profile-input'/>
                 : (props.data ? <p>{props.data.aboutMe}</p> : <></>)}
           </div>
           <div className='data-profile-user'>
-            Favourite
+            Favourite :
             <br/>
             { toggleEdit ? 
                 <input type='text' placeholder='Enter your favourite activity' 
                 name="favorite" value={props.profileData.favorite} 
-                onChange={props.handleProfileChange}/>
+                onChange={props.handleProfileChange} className='profile-input'/>
                 : (props.data ? <p>{props.data.favorite}</p> : null)
             }
           </div>
           {toggleEdit && <div className='data-profile-user'>
-            Minutes Goal
+            Minutes Goal :
             <br/>
               <input type='text' placeholder='Enter your miniute goal' 
               name="minGoal" value={props.profileData.minGoal} 
-              onChange={props.handleProfileChange}/>
+              onChange={props.handleProfileChange} className='profile-input'/>
           </div>}
-          { !toggleEdit ? 
-            <button type="button" className="edit-profile" onClick={initProfileDataForm}>edit</button> 
-            : 
-            <button type='button' className='submit-profile' onClick={editProfileData}>Submit</button>
-          }
+          <div className='profile-button'>
+            { !toggleEdit ? 
+              <button type="button" className="profile-btn" onClick={initProfileDataForm}>edit</button> 
+              : 
+              <button type='button' className='profile-btn' onClick={editProfileData}>Submit</button>
+            }
+          </div>
         </div>
       </div>
     )

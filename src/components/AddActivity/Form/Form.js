@@ -36,30 +36,32 @@ function Form(props) {
   return (
     <>
         <div className='form-actType'>
+          <div className='form-act'>
             <label>Activity Type: </label> 
             <input type="text" value={props.form.actTypes} name="actTypes" onChange={props.handleChange} required />
-        </div>
-        <div className='form-date'>
+          </div>
+          <div className='form-act'>
             <label>Date:</label> 
             <input type="date" value={props.form.date} name="date" onChange={props.handleChange}  required/> 
-        </div>
-        <div>
+          </div>
+          <div className='form-act'>
             <label>Duration:</label> <br/>
             <input type="number" value={props.form.hr} name="hr" onChange={props.handleChange} min={0} max={24} required></input>
-            <label>Hr:</label> 
+            <label>Hour:</label> 
             <input type="number" value={props.form.mn} name="mn" onChange={props.handleChange} min={0} max={59} required></input>
-            <label>Mn:</label>  
-        </div>
-        <div>
+            <label>Min:</label>  
+          </div>
+          <div className='form-act'>
             <label>Calorie: </label>
             <input type="number" value={props.form.cal} name="cal" onChange={props.handleChange} min={0} max={9999}/>
             <label>cals </label>
-        </div>
-        <div>
+          </div>
+          <div className='form-act'>
             <label >Description: </label> <br/>
             <textarea name="des" cols="30" rows="3" value={props.form.des} onChange={props.handleChange}></textarea>
+          </div>
         </div>
-        <button onClick={records}>Add</button>
+        <button onClick={records} className="button">Add</button>
     </>
   )
 }

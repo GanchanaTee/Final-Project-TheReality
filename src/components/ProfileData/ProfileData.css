@@ -5,3 +5,58 @@
     justify-content: center;
     align-items: center;
 }
+.profile-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profile-btn {
+  width: 50%;
+  height: 30px;
+  border: 1px solid;
+  background: var(--purple);
+  border-radius: 25px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  margin-top: 0.5rem;
+}
+.profile-btn:hover{
+    border-color: var(--purple);
+    transition: .5s;
+}
+.data-profile{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.profile-input{
+    width: 95%;
+    padding-left: 15px;
+    height: 30px;
+    font-size: 16px;
+    color: black;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.data-profile-user{
+    font-size: 1rem;
+}
+
+.data-profile-user:first-child{
+    font-size: 1rem;
+    margin: 0.5rem 0rem;
+}
+.data-profile-user span{
+    font-size: 1.25rem;
+    
+}
+.data-profile-user p{
+    margin-left: 20px;
+}
+.pro-pic {
+    height: 10rem;
+}

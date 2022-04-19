@@ -4,6 +4,56 @@
     background-color: black;
     overflow: auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-icon{
+    height: 100%;
+}
+.iconModal{
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+.colorFontAS {
+    color: white;
+}
+.model-content-btn {
+    display: flex;
+}
+.model-content{
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--purple);
+}
+.model-content span {
+    font-size: 2.75rem;
+}
+.model-content input{
+    width: 40%;
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+    color: black;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+.model-content-btn{
+    margin-top: 0.75rem;
+}
+.model-content-btn button {
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.model-content div {
+    margin: 0.25rem 0rem;
+    color: white;
 }

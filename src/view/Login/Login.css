@@ -31,7 +31,7 @@
   width: 100%;
   padding: 0 5px;
   height: 40px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   background: none;
   outline: none;
@@ -39,24 +39,24 @@
 }
 .form-text label{
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 5px;
   color: white;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 18px;
   pointer-events: none;
   transition: .5s;
 }
 .form-text input:focus ~ label,
 .form-text input:valid ~ label{
-    top: -5px;
+    top: -8px;
     color: var(--purple);
 }
 
 .form-text span::before{
   content: '';
   position: absolute;
-  top: 40px;
+  /* top: 40px; */
   left: 0;
   width: 0%;
   height: 2px;
@@ -78,6 +78,7 @@
   font-weight: 700;
   cursor: pointer;
   outline: none;
+  margin-top: 1rem;
 }
 .submit-btn:hover{
   border-color: var(--purple);

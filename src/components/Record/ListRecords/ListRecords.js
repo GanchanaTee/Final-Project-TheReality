@@ -24,7 +24,6 @@ function RowRecord({id,actName,date,duration,calories,setModalEditOpen,modalEdit
           {calories} cal
         </div>
         <div className='data-activity-user'>
-        {/* <button className="iconModal" onClick={() => {setModalEditOpen(true)}}><FontAwesomeIcon icon={faSquarePen} size="lg" border className="colorFontAS"/></button>&nbsp; */}
         <button className="iconModal" onClick={openModal}><FaEdit className="colorFontAS"/></button>
         </div>
         

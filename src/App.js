@@ -5,8 +5,6 @@ import Register from './view/Register/Register';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
-import TestUser from './components/TestUser/TestUser';
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' 
 import { useState } from 'react';
 
@@ -22,7 +20,6 @@ function App() {
           <Route path="/" element={<Profile setIsLogin={setIsLogin}/>} />
           <Route path="/login" element={<Login setIsLogin={setIsLogin}/>}/>
           <Route path='/register' element={<Register />}/>
-          <Route path='/user' element={<TestUser />}/>
         </Routes>
         <Footer/> 
       </div>

@@ -1,0 +1,15 @@
+.form-actType{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-act{
+    margin: 0.5rem 0rem;
+}
+
+.form-act input {
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+}

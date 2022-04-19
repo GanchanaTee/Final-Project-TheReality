@@ -77,47 +77,44 @@ function Modal(props) {
   return (
     <div className='model-container'>
       <div className='model-content'>
-        Your Record
-        <br/>
-        <br/>
+        <span>Your Record</span> <br/>
         Activity Name:{ data && ( canEdit ? 
           <input type='text' placeholder='Enter Your Activity Name' 
           name="actTypes" value={form.actTypes} 
           onChange={handleChange}/>
           : <div>{data[0].activityName}</div>)}
-        <br/>
         Date:{ data && ( canEdit ?
           <input type='date' placeholder='Enter Date' 
           name="date" value={form.date} 
           onChange={handleChange}/>
           : <div>{data[0].timestamp.slice(0,10)}</div>)}
-        <br/>
         duration:{ data && ( canEdit ? 
           <input type='number' placeholder='Enter your activity duration' 
           name="duration" value={form.duration} 
           onChange={handleChange}/>
           : <div>{data[0].duration} min</div>)} 
-        <br/>
         Calories:{ data && ( canEdit ? 
         <input type='number' placeholder='Enter your activity calories' 
         name="cal" value={form.cal} 
         onChange={handleChange}/>
         : <div>{data[0].calories} cal</div>)} 
-        <br/>
         Description:{ data && ( canEdit ? 
         <input type='text' placeholder='Enter your activity description' 
         name="des" value={form.des} 
         onChange={handleChange}/>
         : <div>{data[0].description}</div>)}
-        <br/>
         <div className='model-content-btn'>
           { canEdit ? 
-          <button className='iconModal' onClick={save}><FaRegSave className="colorFontAS"/></button>
-          : <button className='iconModal' onClick={toEdit}><FaEdit className="colorFontAS"/></button>}
-          <button className='iconModal' onClick={deletePost}><FaTrashAlt className="colorFontAS"/></button>
+          <button className='iconModal' onClick={save}><FaRegSave size="2rem" className="colorFontAS"/></button>
+          : <button className='iconModal' onClick={toEdit}><FaEdit size="2rem" className="colorFontAS"/></button>}
+          <button className='iconModal' onClick={deletePost}><FaTrashAlt size="2rem" className="colorFontAS"/></button>
         </div>
       </div>
-      <button className="iconModal" onClick={() => props.setModalEditOpen(false)}><FaTimes className="colorFontAS"/></button>
+      <div className='modal-icon'>
+        <button className="iconModal" onClick={() => props.setModalEditOpen(false)}>
+          <FaTimes className="colorFontAS" size="1rem" />
+        </button>
+      </div>
     </div>
   )
 }
