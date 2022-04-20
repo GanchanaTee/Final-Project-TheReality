@@ -59,7 +59,7 @@ function Register() {
           displayName: registerName
         },
         withCredentials: true,
-        url: "http://localhost:3000/users/register",
+        url: "https://backendthereality.vercel.app/users/register",
       }).then((res) => {
         console.log(res);
         setSuccess(true);

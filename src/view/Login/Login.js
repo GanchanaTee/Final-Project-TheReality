@@ -20,7 +20,7 @@ function Login(props) {
       },
       withCredentials: true,
       // url: "http://localhost:3000/users/login",
-      url: "https://backendthereality-b86l9ck1k-ganchanatee.vercel.app/users/login",
+      url: "https://backendthereality.vercel.app/users/login",
     }).then((res) => {
       console.log(res.data);
       if(res.data === "Successfully Authenticated"){

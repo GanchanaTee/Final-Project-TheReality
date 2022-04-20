@@ -22,7 +22,7 @@ function Profile(props) {
     axios({
         method: "GET",
         withCredentials: true,
-        url: "http://localhost:3000/users/me",
+        url: "https://backendthereality.vercel.app/users/me",
         }).then((res) => {
         setData(res.data);      
         });
@@ -33,7 +33,7 @@ function Profile(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:3000/users/me",
+      url: "https://backendthereality.vercel.app/users/me",
       }).then((res) => {
         if(isMounted) setData(res.data);      
       });

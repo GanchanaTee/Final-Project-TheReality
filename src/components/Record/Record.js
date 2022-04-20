@@ -18,7 +18,7 @@ function Record(props) {
       method: "GET",
       withCredentials: true,
       // url: "http://localhost:3000/users/me/records",
-      url: "https://backendthereality-b86l9ck1k-ganchanatee.vercel.app/users/me/records",
+      url: "https://backendthereality.vercel.app/users/me/records",
     }).then((res) => {
       if (isMounted) {
         setFormRecords(res.data);

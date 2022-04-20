@@ -15,7 +15,7 @@ function ProfileData(props) {
               durationGoal: props.profileData.minGoal
             },
             withCredentials: true,
-            url: "http://localhost:3000/users/edit",
+            url: "https://backendthereality.vercel.app/users/edit",
           }).then((res) => {
             // console.log(res);
           });

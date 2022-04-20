@@ -10,7 +10,7 @@ function Button(props) {
     axios({
       method: "DELETE",
       withCredentials: true,
-      url: "http://localhost:3000/users/logout",
+      url: "https://backendthereality.vercel.app/users/logout",
     });
     props.setIsLogin(false);
   };
