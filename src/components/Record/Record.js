@@ -12,21 +12,21 @@ function Record(props) {
   const [modelID, setModelID] = useState();
   const setLogged =  props.setIsLogin;
 
-  useEffect(() => {
-    let isMounted = true;
-    axios({
-      method: "GET",
-      withCredentials: true,
-      // url: "http://localhost:3000/users/me/records",
-      url: "https://backendthereality.vercel.app/users/me/records",
-    }).then((res) => {
-      if (isMounted) {
-        setFormRecords(res.data);
-        setLogged(true)
-      };
-    });
-    return () => { isMounted = false }
-  },[setLogged, formRecords]);
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   axios({
+  //     method: "GET",
+  //     withCredentials: true,
+  //     // url: "http://localhost:3000/users/me/records",
+  //     url: "https://backendthereality.vercel.app/users/me/records",
+  //   }).then((res) => {
+  //     if (isMounted) {
+  //       setFormRecords(res.data);
+  //       setLogged(true)
+  //     };
+  //   });
+  //   return () => { isMounted = false }
+  // },[setLogged, formRecords]);
 
   const currentMin = formRecords.reduce( (totalMin, record) => {
     return totalMin + record.duration
