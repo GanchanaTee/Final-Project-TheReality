@@ -17,7 +17,7 @@ function Record(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/me/records",
+      url: "http://localhost:3000/users/me/records",
     }).then((res) => {
       if (isMounted) {
         setFormRecords(res.data);

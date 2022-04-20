@@ -18,7 +18,7 @@ function Form(props) {
             description: props.form.des,
           },
           withCredentials: true,
-          url: "http://localhost:4000/users/me/records",
+          url: "http://localhost:3000/users/me/records",
         }).then((res) => {
           console.log(res);
           props.setForm({

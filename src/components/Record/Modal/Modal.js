@@ -28,7 +28,7 @@ function Modal(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: `http://localhost:4000/users/me/records/${searchID}`,
+      url: `http://localhost:3000/users/me/records/${searchID}`,
       }).then((res) => {
         if(isMounted) setData(res.data);  
       });
@@ -39,7 +39,7 @@ function Modal(props) {
     await axios({
       method: "DELETE",
       withCredentials: true,
-      url: `http://localhost:4000/users/me/records/${searchID}`,
+      url: `http://localhost:3000/users/me/records/${searchID}`,
     });
     props.setModalEditOpen(false)
   };
@@ -66,7 +66,7 @@ function Modal(props) {
         description: form.des,
       },
       withCredentials: true,
-      url: `http://localhost:4000/users/me/records/${searchID}`,
+      url: `http://localhost:3000/users/me/records/${searchID}`,
     }).then((res) => {
       // console.log(res);
     });

@@ -10,7 +10,7 @@ function Button(props) {
     axios({
       method: "DELETE",
       withCredentials: true,
-      url: "http://localhost:4000/users/logout",
+      url: "http://localhost:3000/users/logout",
     });
     props.setIsLogin(false);
   };

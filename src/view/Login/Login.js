@@ -19,7 +19,7 @@ function Login(props) {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/users/login",
+      url: "http://localhost:3000/users/login",
     }).then((res) => {
       console.log(res.data);
       if(res.data === "Successfully Authenticated"){
