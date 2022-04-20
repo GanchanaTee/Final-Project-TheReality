@@ -18,8 +18,6 @@ function Record(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      // url: "http://localhost:3000/users/me/records",
-      credentials: 'include',
       url: `${Vercel_URL}/users/me/records`,
     }).then((res) => {
       if (isMounted) {

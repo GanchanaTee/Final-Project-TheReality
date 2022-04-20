@@ -34,7 +34,6 @@ function Profile(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      credentials: 'include',
       url: `${Vercel_URL}/users/me/`,
       }).then((res) => {
         if(isMounted) setData(res.data);      
