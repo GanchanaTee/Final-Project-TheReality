@@ -39,7 +39,7 @@ function Profile(props) {
         if(isMounted) setData(res.data);      
       });
       return () => { isMounted = false}
-  },[]);
+  },[data]);
 
   const handleProfileChange = e => {
     setProfileData({

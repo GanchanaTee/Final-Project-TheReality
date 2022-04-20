@@ -26,7 +26,7 @@ function Record(props) {
       };
     });
     return () => { isMounted = false }
-  },[setLogged]);
+  },[setLogged, formRecords]);
 
   const currentMin = formRecords.reduce( (totalMin, record) => {
     return totalMin + record.duration
