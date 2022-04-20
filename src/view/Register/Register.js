@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { FaCheck, FaInfoCircle, FaTimes } from "react-icons/fa";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { Vercel_URL } from "../../api/vercel";
 
 import './Register.css';
 
@@ -59,7 +60,7 @@ function Register() {
           displayName: registerName
         },
         withCredentials: true,
-        url: "https://backendthereality.vercel.app/users/register",
+        url: `${Vercel_URL}/users/register`,
       }).then((res) => {
         console.log(res);
         setSuccess(true);

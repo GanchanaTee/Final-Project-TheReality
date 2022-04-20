@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {FaUser, FaSignOutAlt} from "react-icons/fa";
 import "./Button.css";
 import axios from "axios";
+import { Vercel_URL } from "../../api/vercel";
 
 function Button(props) {
 
@@ -10,7 +11,7 @@ function Button(props) {
     axios({
       method: "DELETE",
       withCredentials: true,
-      url: "https://backendthereality.vercel.app/users/logout",
+      url: `${Vercel_URL}/users/logout`,
     });
     props.setIsLogin(false);
   };

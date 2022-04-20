@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './ProfileData.css'
+import { Vercel_URL } from '../../api/vercel';
+
 function ProfileData(props) {
   
   const [toggleEdit, setToggleEdit] = useState(false);
@@ -15,7 +17,7 @@ function ProfileData(props) {
               durationGoal: props.profileData.minGoal
             },
             withCredentials: true,
-            url: "https://backendthereality.vercel.app/users/edit",
+            url: `${Vercel_URL}/users/edit`,
           }).then((res) => {
             // console.log(res);
           });

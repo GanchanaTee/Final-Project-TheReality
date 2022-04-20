@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import './Form.css'
+import { Vercel_URL } from '../../../api/vercel';
 
 function Form(props) {
 
@@ -18,7 +19,7 @@ function Form(props) {
             description: props.form.des,
           },
           withCredentials: true,
-          url: "https://backendthereality.vercel.app/users/me/records",
+          url: `${Vercel_URL}/users/me/records`,
         }).then((res) => {
           console.log(res);
           props.setForm({

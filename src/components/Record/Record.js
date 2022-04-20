@@ -4,6 +4,7 @@ import './Record.css'
 
 import ListRecord from './ListRecords/ListRecords'
 import Modal from './Modal/Modal' ;
+import { Vercel_URL } from '../../api/vercel';
 
 function Record(props) {
 
@@ -18,7 +19,7 @@ function Record(props) {
       method: "GET",
       withCredentials: true,
       // url: "http://localhost:3000/users/me/records",
-      url: "https://backendthereality.vercel.app/users/me/records",
+      url: `${Vercel_URL}/users/me/records`,
     }).then((res) => {
       if (isMounted) {
         setFormRecords(res.data);

@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import './Modal.css'
 import { FaTimes, FaEdit, FaRegSave, FaTrashAlt } from "react-icons/fa";
+import { Vercel_URL } from '../../../api/vercel';
 
 import axios from 'axios';
 
@@ -28,7 +29,7 @@ function Modal(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: `https://backendthereality.vercel.app/users/me/records/${searchID}`,
+      url: `${Vercel_URL}/users/me/records/${searchID}`,
       }).then((res) => {
         if(isMounted) setData(res.data);  
       });
@@ -39,7 +40,7 @@ function Modal(props) {
     await axios({
       method: "DELETE",
       withCredentials: true,
-      url: `https://backendthereality.vercel.app/users/me/records/${searchID}`,
+      url: `${Vercel_URL}/users/me/records/${searchID}`,
     });
     props.setModalEditOpen(false)
   };
@@ -66,7 +67,7 @@ function Modal(props) {
         description: form.des,
       },
       withCredentials: true,
-      url: `https://backendthereality.vercel.app/users/me/records/${searchID}`,
+      url: `${Vercel_URL}/users/me/records/${searchID}`,
     }).then((res) => {
       // console.log(res);
     });

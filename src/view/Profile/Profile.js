@@ -6,6 +6,7 @@ import AddActivity from '../../components/AddActivity/AddActivity'
 import Record from '../../components/Record/Record';
 import ProfileData from '../../components/ProfileData/ProfileData';
 import './Profile.css'
+import { Vercel_URL } from '../../api/vercel';
 
 function Profile(props) {
 
@@ -22,7 +23,7 @@ function Profile(props) {
     axios({
         method: "GET",
         withCredentials: true,
-        url: "https://backendthereality.vercel.app/users/me/",
+        url: `${Vercel_URL}/users/me/`,
         }).then((res) => {
         setData(res.data);      
         });
@@ -33,7 +34,7 @@ function Profile(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "https://backendthereality.vercel.app/users/me/",
+      url: `${Vercel_URL}/users/me/`,
       }).then((res) => {
         if(isMounted) setData(res.data);      
       });

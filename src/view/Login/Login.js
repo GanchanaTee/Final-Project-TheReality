@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
+import { Vercel_URL } from '../../api/vercel';
 
 import './Login.css'
 
@@ -19,8 +20,7 @@ function Login(props) {
         password: loginPassword,
       },
       withCredentials: true,
-      // url: "http://localhost:3000/users/login",
-      url: "https://backendthereality.vercel.app/users/login",
+      url: `${Vercel_URL}/users/login`,
     }).then((res) => {
       console.log(res.data);
       if(res.data === "Successfully Authenticated"){
