@@ -28,17 +28,17 @@ function Profile(props) {
         });
   };
 
-  useEffect( () => {
-    let isMounted = true;
-    axios({
-      method: "GET",
-      withCredentials: true,
-      url: "https://backendthereality.vercel.app/users/me/",
-      }).then((res) => {
-        if(isMounted) setData(res.data);      
-      });
-      return () => { isMounted = false}
-  },[data]);
+  // useEffect( () => {
+  //   let isMounted = true;
+  //   axios({
+  //     method: "GET",
+  //     withCredentials: true,
+  //     url: "https://backendthereality.vercel.app/users/me/",
+  //     }).then((res) => {
+  //       if(isMounted) setData(res.data);      
+  //     });
+  //     return () => { isMounted = false}
+  // },[data]);
 
   const handleProfileChange = e => {
     setProfileData({
